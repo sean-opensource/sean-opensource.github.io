@@ -1,1 +1,25 @@
+---
+title: Home Lab
+date: 2022-06-13 23:37:08
+categories: [Scripts,Welcome]
+tags: [scripts]     # TAG names should always be lowercase
+---
 
+# Welcome
+
+Hello and welcome to my script docs site.
+
+```yaml
+key: value
+```
+
+
+
+https://github.com/jekyll/jekyll-compose
+
+
+git push
+ git commit -m"feat(pos): Hello Welcome"
+ git config --global user.name "Sean"
+git config --global user.email "sean.wauchop@gmail.com"
+git  status
