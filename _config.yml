@@ -23,7 +23,7 @@ timezone: Australia/Melbourne
 
 title: Chilepluto                        # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: "Empowering Your AI Journey: Unleash the Power of Local Language Models with Python "   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
@@ -41,7 +41,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Sean
-  email: example@doamin.com             # change to your email address
+  email: chilepluto@chilepluto.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/username      # change to your twitter homepage
