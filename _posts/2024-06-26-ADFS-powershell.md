@@ -6,7 +6,6 @@ categories: [Powrshell, ADFS]
 tags: [post]
 ---
 
-+++
 # Copy ADFS Claim Rules with PowerShell
 
 In our infrastructure, we frequently configure ADFS relying party trusts for various environments, including Dev, QA, and Lab instances of Microsoft CRM. The manual entry of claim rules for each trust is both time-consuming and error-prone. To streamline this process, I developed a PowerShell script to automate the export and import of ADFS claim rules, significantly enhancing efficiency and consistency.
@@ -84,4 +83,3 @@ if (Test-Path $importFilePath) {
     - It verifies the import by retrieving the rules from the new relying party trust and checking if they are present.
 
 This approach ensures robust error handling and provides feedback at each step, making it easier to identify and resolve issues.
-+++
