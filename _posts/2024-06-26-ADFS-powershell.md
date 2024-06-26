@@ -20,7 +20,7 @@ First, export the claim rules to a file from an existing ADFS Relying Party Trus
 $existingRelyingPartyTrustName = "WOPR - External"
 
 # Define the output file path
-$outputFilePath = "C:\temp\Clain_Rules.txt"
+$outputFilePath = "C:\temp\Claim_Rules.txt"
 
 # Check if the output file already exists and delete it if it does
 if (Test-Path $outputFilePath) {
