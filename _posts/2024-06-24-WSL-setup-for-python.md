@@ -2,7 +2,7 @@
 layout: post
 title: Windows Subsystem for Linux (WSL) setup
 date: 2024-06-24 00:00 +1000
-categories: [Python, AI ]
+categories: [Python, WSL]
 tags: [post]
 ---
 
