@@ -35,6 +35,23 @@ $ bundle
 
 Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
 
+### Local preview
+
+This site uses Homebrew Ruby 3.4 on macOS. Prepare the workspace and run the
+same production build checks used for deployment:
+
+```shell
+brew install ruby@3.4
+bash tools/local.sh setup
+bash tools/local.sh build
+```
+
+Start a live-reloading local preview while editing:
+
+```shell
+bash tools/local.sh serve
+```
+
 ## License
 
 This work is published under [MIT][mit] License.

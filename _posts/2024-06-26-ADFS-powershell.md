@@ -1,14 +1,17 @@
 ---
 layout: post
 title: Copy ADFS Claim Rules
-date: 2024-06-24 00:00 +1000
-categories: [Powrshell, ADFS]
-tags: [post]
+date: 2024-06-26 00:00 +1000
+categories: [PowerShell, ADFS]
+tags: [powershell, adfs, windows-server]
+description: Export ADFS issuance transform rules from one relying party trust and import them into another.
 ---
 
-# Copy ADFS Claim Rules with PowerShell
+Configuring similar ADFS relying party trusts by hand is time-consuming and error-prone. These PowerShell examples export issuance transform rules from an existing trust and import them into a new trust.
 
-In our infrastructure, we frequently configure ADFS relying party trusts for various environments, including Dev, QA, and Lab instances of Microsoft CRM. The manual entry of claim rules for each trust is both time-consuming and error-prone. To streamline this process, I developed a PowerShell script to automate the export and import of ADFS claim rules, significantly enhancing efficiency and consistency.
+Run these commands on an ADFS server with the AD FS PowerShell module and
+permissions to read and update relying party trusts. Test changes in a
+non-production environment first.
 
 ## Export ADFS Claim Rules
 
@@ -16,7 +19,7 @@ First, export the claim rules to a file from an existing ADFS Relying Party Trus
 
 ```powershell
 # Define the name of the existing relying party trust
-$existingRelyingPartyTrustName = "WOPR - External"
+$existingRelyingPartyTrustName = "Source Application"
 
 # Define the output file path
 $outputFilePath = "C:\temp\Claim_Rules.txt"
@@ -27,9 +30,13 @@ if (Test-Path $outputFilePath) {
 }
 
 # Export the claim rules to the file
-Get-ADFSRelyingPartyTrust -Name $existingRelyingPartyTrustName |
-    Select-Object -ExpandProperty IssuanceTransformRules |
-    Out-File $outputFilePath -Force
+try {
+    Get-ADFSRelyingPartyTrust -Name $existingRelyingPartyTrustName -ErrorAction Stop |
+        Select-Object -ExpandProperty IssuanceTransformRules |
+        Out-File $outputFilePath -Force -ErrorAction Stop
+} catch {
+    throw "Failed to export claim rules: $($_.Exception.Message)"
+}
 
 # Confirm the file has been created
 if (Test-Path $outputFilePath) {
@@ -45,7 +52,7 @@ Once you have the rules stored in a text file, you can import them into your new
 
 ```powershell
 # Define the name of the new relying party trust
-$newRelyingPartyTrustName = "NORAD - External"
+$newRelyingPartyTrustName = "Target Application"
 
 # Define the path to the file containing the claim rules
 $importFilePath = "C:\temp\Claim_Rules.txt"
@@ -53,15 +60,17 @@ $importFilePath = "C:\temp\Claim_Rules.txt"
 # Check if the file exists before attempting to import
 if (Test-Path $importFilePath) {
     # Import the claim rules from the file
-    Set-ADFSRelyingPartyTrust -TargetName $newRelyingPartyTrustName -IssuanceTransformRulesFile $importFilePath
+    Set-ADFSRelyingPartyTrust -TargetName $newRelyingPartyTrustName -IssuanceTransformRulesFile $importFilePath -ErrorAction Stop
 
     # Verify the rules were imported
     $importedRules = Get-ADFSRelyingPartyTrust -Name $newRelyingPartyTrustName | Select-Object -ExpandProperty IssuanceTransformRules
 
-    if ($importedRules) {
+    $exportedRules = Get-Content $importFilePath -Raw
+
+    if ($importedRules.Trim() -eq $exportedRules.Trim()) {
         Write-Output "Claim rules successfully imported to $newRelyingPartyTrustName"
     } else {
-        Write-Output "Failed to import claim rules."
+        throw "Imported claim rules do not match the exported rules."
     }
 } else {
     Write-Output "Claim rules file not found at $importFilePath"

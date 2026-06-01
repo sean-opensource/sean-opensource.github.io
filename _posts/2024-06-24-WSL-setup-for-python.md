@@ -3,12 +3,14 @@ layout: post
 title: Windows Subsystem for Linux (WSL) setup
 date: 2024-06-24 00:00 +1000
 categories: [Python, WSL]
-tags: [post]
+tags: [python, windows, wsl]
+description: Install WSL, add Python tooling, and create a virtual environment on Windows.
 ---
 
-# Using Python in Windows WSL: A Detailed Guide
-
 With Windows Subsystem for Linux (WSL), you can run a Linux distribution alongside your Windows installation, allowing you to enjoy the best of both worlds. This guide will walk you through the process of setting up WSL, installing Python, and running Python scripts in a WSL environment.
+
+Microsoft maintains the current installation guidance in the
+[WSL documentation](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 ## Prerequisites
 
@@ -23,7 +25,7 @@ First, you need to install WSL on your Windows machine. Follow these steps:
 
 1. **Open PowerShell as Administrator:**
 
-    Press `Win + X` and select `Windows PowerShell (Admin)`.
+    Open Windows Terminal or PowerShell as Administrator.
 
 2. **Enable WSL:**
 
@@ -80,7 +82,7 @@ Now that you have your Linux distribution set up, you can install Python.
 2. **Install Python:**
 
     ```bash
-    sudo apt install python3 python3-pip
+    sudo apt install python3 python3-pip python3-venv
     ```
 
 3. **Verify Installation:**
@@ -91,7 +93,18 @@ Now that you have your Linux distribution set up, you can install Python.
     python3 --version
     ```
 
-## Step 4: Running a Python Script
+## Step 4: Creating a Virtual Environment
+
+Create an isolated environment for a project:
+
+```bash
+mkdir hello-python
+cd hello-python
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+## Step 5: Running a Python Script
 
 Let's create and run a simple Python script to ensure everything is working correctly.
 
@@ -124,3 +137,7 @@ Let's create and run a simple Python script to ensure everything is working corr
 ## Conclusion
 
 By following this guide, you've set up WSL on your Windows machine, installed a Linux distribution, and successfully installed and run Python. This setup allows you to leverage the power of Linux development tools while working within your Windows environment. Explore further by installing additional Python packages, setting up virtual environments, and developing your projects in this flexible setup.
+
+If WSL does not install or a distribution will not start, follow
+[Troubleshoot WSL Installation and Startup Problems](/posts/troubleshoot-wsl-installation-startup-problems/)
+before making larger system changes.
