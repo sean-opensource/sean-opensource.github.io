@@ -20,6 +20,10 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  # GitHub-hosted runners switch JavaScript actions to Node.js 24 on June 16, 2026.
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 concurrency:
   group: "pages"
   cancel-in-progress: true
