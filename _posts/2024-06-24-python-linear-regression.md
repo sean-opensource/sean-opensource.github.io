@@ -3,38 +3,26 @@ layout: post
 title: Linear Regression with Multiple Variables in Python
 date: 2024-06-25 00:00 +1000
 categories: [Python, AI]
-tags: [post]
+tags: [python, machine-learning, scikit-learn, regression]
+description: Build and evaluate a multiple linear regression example with pandas and scikit-learn.
+math: true
+redirect_from:
+  - /posts/pyhon-Linear-Regression-with-Multiple-Variab/
 ---
 
-
-# Linear Regression with Multiple Variables in Python: A Detailed Guide
-
 Linear regression is a fundamental technique in machine learning and statistics. It is used to predict a continuous target variable based on one or more input features. When multiple variables (features) are involved, it's called multiple linear regression. In this blog post, we will go through the steps to implement multiple linear regression in Python, using the popular `scikit-learn` library.
-
-## Table of Contents
-1. Introduction
-2. Prerequisites
-3. Step-by-Step Guide
-    1. Data Preparation
-    2. Data Visualization
-    3. Feature Selection
-    4. Splitting Data
-    5. Training the Model
-    6. Making Predictions
-    7. Model Evaluation
-4. Conclusion
 
 ## Introduction
 Multiple linear regression aims to model the relationship between two or more explanatory variables and a response variable by fitting a linear equation to observed data. The equation for multiple linear regression looks like this:
 
-\[ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \epsilon \]
+$$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \epsilon $$
 
 Where:
-- \( y \) is the dependent variable (target).
-- \( x_1, x_2, \ldots, x_n \) are the independent variables (features).
-- \( \beta_0 \) is the intercept.
-- \( \beta_1, \beta_2, \ldots, \beta_n \) are the coefficients.
-- \( \epsilon \) is the error term.
+- $y$ is the dependent variable (target).
+- $x_1, x_2, \ldots, x_n$ are the independent variables (features).
+- $\beta_0$ is the intercept.
+- $\beta_1, \beta_2, \ldots, \beta_n$ are the coefficients.
+- $\epsilon$ is the error term.
 
 ## Prerequisites
 Before we start, make sure you have the following packages installed:
@@ -52,13 +40,20 @@ pip install pandas numpy matplotlib scikit-learn
 ## Step-by-Step Guide
 
 ### 1. Data Preparation
-First, we need to load and prepare our dataset. For this example, we'll use a dataset with house prices which includes features like square footage, number of bedrooms, and age of the house.
+First, we need to load and prepare our dataset. This deliberately small example
+demonstrates the API. Use a larger, representative dataset before drawing
+conclusions from the metrics.
 
 ```python
 import pandas as pd
 
-# Load the dataset
-data = pd.read_csv('house_prices.csv')
+# Example dataset. Replace this with pd.read_csv(...) for your own data.
+data = pd.DataFrame({
+    'square_footage': [900, 1200, 1500, 1800, 2100, 2400],
+    'bedrooms': [2, 3, 3, 4, 4, 5],
+    'age': [30, 20, 15, 10, 8, 5],
+    'price': [320000, 410000, 485000, 590000, 680000, 790000],
+})
 
 # Display the first few rows of the dataset
 print(data.head())
@@ -152,6 +147,7 @@ print(f'R-squared: {r2}')
 ## Conclusion
 Multiple linear regression is a powerful tool for predicting outcomes based on multiple features. By following the steps outlined in this guide, you can build and evaluate a multiple linear regression model using Python. The `scikit-learn` library makes it straightforward to implement and assess machine learning models.
 
-Remember, the key to a good model is not just in the algorithm itself but also in the quality and preparation of the data. Happy coding!
+Remember, the key to a good model is not just in the algorithm itself but also in the quality and preparation of the data.
 
-+++
+For a real analysis, inspect residuals, validate assumptions, and evaluate the
+model against data that was not used during training.
