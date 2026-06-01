@@ -5,7 +5,7 @@
 - Repaired `CNAME` so it contains only `chilepluto.com`.
 - Updated canonical site metadata to use `https://chilepluto.com`.
 - Removed placeholder social links and blanked the unused Twitter account.
-- Updated the deploy workflow to `actions/checkout@v4` and Ruby 3.2.
+- Updated the deploy workflow to `actions/checkout@v6` and Ruby 3.4.
 - Added `tools/local.sh` for local setup, production checks, and live preview.
 - Updated Liquid from 4.0.3 to 4.0.4 so the older theme renders on Ruby 3.2.
 - Corrected PowerShell taxonomy and generalized the public ADFS examples.
@@ -17,6 +17,8 @@
 - Upgraded `jekyll-theme-chirpy` from 5.2.0 to 7.5.0.
 - Replaced the force-push `gh-pages` workflow with GitHub Pages artifacts.
 - Updated CI and local builds to Ruby 3.4 and `html-proofer` 5.x.
+- Opted GitHub Actions into Node.js 24 ahead of the runner default change on
+  June 16, 2026.
 - Removed copied v5 locale and asset overrides so the theme gem provides the
   current versions.
 - Updated the static-assets submodule to the commit pinned by Chirpy Starter
