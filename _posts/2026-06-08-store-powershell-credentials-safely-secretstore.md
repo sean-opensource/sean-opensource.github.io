@@ -18,7 +18,7 @@ scripts that need a credential.
 
 ## Before You Start
 
-Use PowerShell 7. SecretStore stores secrets locally for the current logged-in
+Use PowerShell 7. SecretStore stores secrets locally for the currently logged-in
 user and encrypts the vault contents with .NET cryptography APIs.
 
 The default SecretStore configuration asks for a vault password. That makes it
