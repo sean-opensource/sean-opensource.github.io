@@ -8,12 +8,26 @@ permalink: /local-ai/
 
 Local AI articles on Chilepluto focus on running, testing, and selecting models on personal hardware, with practical notes for Python workflows and Apple Silicon.
 
-## Recommended articles
+## Published Local AI articles
 
-- [Run a Local Text-Generation Pipeline on Apple Silicon](/posts/local-text-generation-apple-silicon/)
-- [Quantize a Local Model on Apple Silicon with Transformers Metal](/posts/quantize-local-model-apple-silicon-metal/)
-- [Choose a Local Language Model for Your Hardware](/posts/choose-local-language-model-hardware/)
-- [Python AI Notes](/posts/python-ai/)
+{% assign has_ai_posts = false %}
+{% for post in site.posts %}
+  {% if post.categories contains 'AI' or post.tags contains 'local-ai' or post.tags contains 'llm' %}
+    {% assign has_ai_posts = true %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%d %b %Y" }}
+  {% endif %}
+{% endfor %}
+
+{% unless has_ai_posts %}
+Local AI articles are scheduled and will appear here as they publish.
+{% endunless %}
+
+## Upcoming focus areas
+
+- Apple Silicon local inference
+- Model selection by hardware
+- Quantisation
+- Python local AI workflows
 
 ## Related topics
 
