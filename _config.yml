@@ -9,9 +9,10 @@ lang: en
 timezone: Australia/Melbourne
 
 title: Chilepluto
-tagline: "Practical notes on PowerShell, Python, and local AI"
+tagline: "Practical notes on Azure, automation, platform engineering, and local AI"
 description: >-
-  Practical technical guides for PowerShell, Python, Windows, and local AI workflows.
+  Practical technical guides for Azure landing zones, cloud governance,
+  Terraform, PowerShell, Python, Windows, FinOps, and local AI workflows.
 
 url: "https://chilepluto.com"
 
@@ -69,14 +70,14 @@ comments:
     issue_term:
   giscus:
     repo:
-    repo_id:
-    category:
-    category_id:
-    mapping:
-    strict:
-    input_position:
-    lang:
-    reactions_enabled:
+      repo_id:
+      category:
+      category_id:
+      mapping:
+      strict:
+      input_position:
+      lang:
+      reactions_enabled:
 
 assets:
   self_host:
