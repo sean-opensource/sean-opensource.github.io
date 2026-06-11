@@ -12,37 +12,59 @@ Use this page to find the best starting point.
 
 ## Azure and platform engineering
 
-Start with the Azure landing zone cluster:
+Start with:
 
 - [Azure Landing Zones](/azure-landing-zones/)
-- [Practical Azure Landing Zone Design for Secure Enterprise Platforms](/posts/practical-azure-landing-zone-design-secure-enterprise-platforms/)
-- [Terraform and Azure DevOps Delivery Model for Landing Zones](/posts/terraform-azure-devops-landing-zone-delivery-model/)
-- [Enterprise Platform Operating Model for Cloud Governance Teams](/posts/enterprise-platform-operating-model-cloud-governance/)
+
+The Azure cluster will expand as scheduled articles publish across landing zone design, Terraform delivery, networking, monitoring, FinOps, identity, policy as code, and platform operating models.
 
 ## PowerShell and Windows
 
 Good starting points:
 
-- [Store PowerShell Credentials Safely with SecretStore](/posts/store-powershell-credentials-safely-secretstore/)
-- [Use PowerShell Remoting Safely with WinRM](/posts/powershell-remoting-winrm/)
-- [Manage Persistent Network Drives with PowerShell](/posts/manage-persistent-network-drives-powershell/)
+{% assign has_powershell_posts = false %}
+{% for post in site.posts %}
+  {% if post.categories contains 'PowerShell' or post.tags contains 'powershell' %}
+    {% assign has_powershell_posts = true %}
+- [{{ post.title }}]({{ post.url | relative_url }})
+  {% endif %}
+{% endfor %}
+
+{% unless has_powershell_posts %}
+PowerShell articles are scheduled and will appear here as they publish.
+{% endunless %}
 
 ## Python, WSL, and developer workflow
 
 Good starting points:
 
-- [WSL setup for Python](/posts/WSL-setup-for-python/)
-- [Troubleshoot WSL Installation and Startup Problems](/posts/troubleshoot-wsl-installation-startup-problems/)
-- [Set Up VS Code Dev Containers on WSL 2](/posts/vscode-dev-containers-wsl2/)
-- [Run Python Tests and Formatting Inside WSL](/posts/python-tests-formatting-wsl/)
+{% assign has_python_wsl_posts = false %}
+{% for post in site.posts %}
+  {% if post.categories contains 'Python' or post.categories contains 'WSL' or post.tags contains 'python' or post.tags contains 'wsl' %}
+    {% assign has_python_wsl_posts = true %}
+- [{{ post.title }}]({{ post.url | relative_url }})
+  {% endif %}
+{% endfor %}
+
+{% unless has_python_wsl_posts %}
+Python and WSL articles are scheduled and will appear here as they publish.
+{% endunless %}
 
 ## Local AI and machine learning
 
 Good starting points:
 
-- [Run a Local Text-Generation Pipeline on Apple Silicon](/posts/local-text-generation-apple-silicon/)
-- [Choose a Local Language Model for Your Hardware](/posts/choose-local-language-model-hardware/)
-- [Build a Reusable scikit-learn Pipeline](/posts/build-reusable-scikit-learn-pipeline/)
+{% assign has_ai_posts = false %}
+{% for post in site.posts %}
+  {% if post.categories contains 'AI' or post.tags contains 'local-ai' or post.tags contains 'llm' %}
+    {% assign has_ai_posts = true %}
+- [{{ post.title }}]({{ post.url | relative_url }})
+  {% endif %}
+{% endfor %}
+
+{% unless has_ai_posts %}
+Local AI articles are scheduled and will appear here as they publish.
+{% endunless %}
 
 ## How the site is written
 
