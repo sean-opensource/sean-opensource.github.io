@@ -11,19 +11,35 @@ Azure articles on Chilepluto focus on platform engineering, landing zones, cloud
 ## Start here
 
 - [Azure Landing Zones](/azure-landing-zones/)
-- [Practical Azure Landing Zone Design for Secure Enterprise Platforms](/posts/practical-azure-landing-zone-design-secure-enterprise-platforms/)
 
-## Landing zone and governance cluster
+## Published Azure articles
 
-- [Azure Management Group and Subscription Design for Secure Enterprise Platforms](/posts/azure-management-group-subscription-design/)
-- [Azure Policy Guardrails for Enterprise Landing Zones](/posts/azure-policy-guardrails-enterprise-landing-zones/)
-- [Terraform and Azure DevOps Delivery Model for Landing Zones](/posts/terraform-azure-devops-landing-zone-delivery-model/)
-- [Azure Hub-and-Spoke Networking for Enterprise Landing Zones](/posts/azure-hub-spoke-networking-enterprise-landing-zones/)
-- [Azure Logging and Monitoring Baseline for Landing Zones](/posts/azure-logging-monitoring-baseline-landing-zones/)
-- [FinOps Tagging and Cost Accountability for Azure Platforms](/posts/finops-tagging-cost-accountability-azure-platforms/)
-- [Azure Identity and Privileged Access Design for Platform Engineering](/posts/azure-identity-privileged-access-platform-engineering/)
-- [Azure Policy as Code with Terraform](/posts/azure-policy-as-code-terraform/)
-- [Enterprise Platform Operating Model for Cloud Governance Teams](/posts/enterprise-platform-operating-model-cloud-governance/)
+{% assign has_azure_posts = false %}
+{% for post in site.posts %}
+  {% if post.categories contains 'Azure' %}
+    {% assign has_azure_posts = true %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%d %b %Y" }}
+  {% endif %}
+{% endfor %}
+
+{% unless has_azure_posts %}
+No Azure articles are currently published.
+{% endunless %}
+
+## Upcoming focus areas
+
+The Azure content cluster is planned to cover:
+
+- Landing zone design
+- Management groups and subscriptions
+- Policy guardrails
+- Terraform and Azure DevOps delivery
+- Hub-and-spoke networking
+- Logging and monitoring
+- FinOps cost accountability
+- Identity and privileged access
+- Policy as code
+- Platform operating models
 
 ## Related topics
 
