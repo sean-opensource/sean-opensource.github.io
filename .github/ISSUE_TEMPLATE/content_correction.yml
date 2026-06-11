@@ -1,0 +1,33 @@
+name: Content correction
+description: Report outdated, unclear, or incorrect technical content.
+title: "Correction: "
+labels: [content, correction]
+body:
+  - type: input
+    id: article
+    attributes:
+      label: Article URL
+      description: Paste the article URL.
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What needs correction?
+      description: Explain the outdated, unclear, or incorrect content.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Source or evidence
+      description: Link to vendor documentation, release notes, or other evidence if available.
+    validations:
+      required: false
+  - type: textarea
+    id: suggested
+    attributes:
+      label: Suggested change
+      description: Suggest replacement wording or a fix if you have one.
+    validations:
+      required: false
