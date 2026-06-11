@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Chilepluto social preview</title>
+  <desc id="desc">Chilepluto technical notes on cloud governance, Azure, Terraform, VMware, FinOps, PowerShell, Python, and local AI.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="55%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="75%" cy="25%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#6366f1" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#111827" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <circle cx="965" cy="155" r="74" fill="#38bdf8" opacity="0.88"/>
+  <circle cx="1005" cy="135" r="28" fill="#e0f2fe" opacity="0.85"/>
+  <circle cx="905" cy="225" r="9" fill="#e0f2fe" opacity="0.9"/>
+  <circle cx="1035" cy="255" r="6" fill="#c7d2fe" opacity="0.9"/>
+  <circle cx="865" cy="115" r="5" fill="#f8fafc" opacity="0.8"/>
+  <circle cx="1090" cy="95" r="4" fill="#f8fafc" opacity="0.75"/>
+  <path d="M120 455 C260 375, 390 525, 545 435 S835 325, 1080 410" fill="none" stroke="#38bdf8" stroke-opacity="0.28" stroke-width="4"/>
+  <text x="96" y="178" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="76" font-weight="800" fill="#f8fafc">Chilepluto</text>
+  <text x="100" y="242" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" font-weight="500" fill="#bae6fd">Practical technical notes for builders and operators</text>
+  <text x="100" y="330" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="600" fill="#f8fafc">Cloud Governance • Azure • Terraform • VMware</text>
+  <text x="100" y="382" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="600" fill="#f8fafc">FinOps • PowerShell • Python • Local AI</text>
+  <text x="100" y="520" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="26" font-weight="500" fill="#cbd5e1">chilepluto.com</text>
+</svg>
