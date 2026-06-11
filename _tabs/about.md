@@ -4,9 +4,11 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-Chilepluto is a personal technical-notes site focused on practical engineering, automation, cloud governance, and local AI workflows.
+Chilepluto is a personal technical-notes site focused on practical engineering, automation, cloud governance, platform engineering, and local AI workflows.
 
 The site is written by Sean and collects repeatable notes, examples, and troubleshooting patterns from hands-on infrastructure and platform engineering work. The goal is to publish clear technical references that are useful when building, operating, securing, or debugging real systems.
+
+Articles favour practical engineering notes from real platform, automation, and infrastructure work. They focus on repeatable patterns, operational checklists, implementation trade-offs, and safe public examples.
 
 ## Focus areas
 
@@ -28,6 +30,8 @@ Chilepluto covers practical topics across:
 A major focus of this site is how to design and operate cloud platforms in a controlled, repeatable, and secure way.
 
 Topics may include landing zone design, management groups, policy, identity, networking, logging, security operations, deployment pipelines, and operational guardrails. The aim is to turn cloud governance from static documentation into practical engineering patterns that teams can actually use.
+
+Start with the curated [Azure Landing Zones](/azure-landing-zones/) reading path.
 
 ## Terraform and Azure DevOps
 
@@ -61,6 +65,7 @@ Posts are intended to be:
 - Repeatable where possible
 - Clear about assumptions and prerequisites
 - Focused on commands, configuration, checks, and troubleshooting
+- Useful for engineers building and operating enterprise platforms
 - Safe for public sharing, using examples rather than sensitive environment details
 
 ## Contact
