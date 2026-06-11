@@ -8,14 +8,27 @@ permalink: /powershell/
 
 PowerShell articles on Chilepluto focus on practical administration, safe automation, Windows operations, and repeatable troubleshooting.
 
-## Recommended articles
+## Published PowerShell articles
 
-- [Store PowerShell Credentials Safely with SecretStore](/posts/store-powershell-credentials-safely-secretstore/)
-- [Use PowerShell Remoting Safely with WinRM](/posts/powershell-remoting-winrm/)
-- [Manage Persistent Network Drives with PowerShell](/posts/manage-persistent-network-drives-powershell/)
-- [Back Up and Validate ADFS Claim Rules Before a Change](/posts/back-up-validate-adfs-claim-rules/)
-- [Map a Network Drive with New-PSDrive](/posts/map-network-drive-new-psdrive/)
-- [ADFS PowerShell Notes](/posts/ADFS-powershell/)
+{% assign has_powershell_posts = false %}
+{% for post in site.posts %}
+  {% if post.categories contains 'PowerShell' or post.tags contains 'powershell' %}
+    {% assign has_powershell_posts = true %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%d %b %Y" }}
+  {% endif %}
+{% endfor %}
+
+{% unless has_powershell_posts %}
+PowerShell articles are scheduled and will appear here as they publish.
+{% endunless %}
+
+## Upcoming focus areas
+
+- Safe credential storage
+- Remoting and WinRM
+- Network drive management
+- ADFS administration
+- Windows automation patterns
 
 ## Related topics
 
