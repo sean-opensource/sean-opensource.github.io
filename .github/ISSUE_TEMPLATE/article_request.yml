@@ -1,0 +1,39 @@
+name: Article request
+description: Suggest a new topic for Chilepluto.
+title: "Article request: "
+labels: [content, idea]
+body:
+  - type: textarea
+    id: topic
+    attributes:
+      label: What topic should be covered?
+      description: Describe the article idea and the problem it should help solve.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Topic area
+      options:
+        - Azure and platform engineering
+        - PowerShell and Windows
+        - Python and WSL
+        - Local AI
+        - FinOps
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: Who is the audience?
+      description: Describe who would benefit from the article.
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes or references
+      description: Add relevant links, examples, or context.
+    validations:
+      required: false
