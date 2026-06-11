@@ -8,20 +8,36 @@ order: 5
 
 This page is the curated reading path for Chilepluto articles on Azure landing zones, cloud governance, platform engineering, automation, FinOps, and operating models.
 
-Start with the foundation article, then work through the supporting topics in order.
+Start with the foundation article, then follow the supporting articles as they publish.
 
-## Recommended reading order
+## Published articles
 
-1. [Practical Azure Landing Zone Design for Secure Enterprise Platforms](/posts/practical-azure-landing-zone-design-secure-enterprise-platforms/)
-2. [Azure Management Group and Subscription Design for Secure Enterprise Platforms](/posts/azure-management-group-subscription-design/)
-3. [Azure Policy Guardrails for Enterprise Landing Zones](/posts/azure-policy-guardrails-enterprise-landing-zones/)
-4. [Terraform and Azure DevOps Delivery Model for Landing Zones](/posts/terraform-azure-devops-landing-zone-delivery-model/)
-5. [Azure Hub-and-Spoke Networking for Enterprise Landing Zones](/posts/azure-hub-spoke-networking-enterprise-landing-zones/)
-6. [Azure Logging and Monitoring Baseline for Landing Zones](/posts/azure-logging-monitoring-baseline-landing-zones/)
-7. [FinOps Tagging and Cost Accountability for Azure Platforms](/posts/finops-tagging-cost-accountability-azure-platforms/)
-8. [Azure Identity and Privileged Access Design for Platform Engineering](/posts/azure-identity-privileged-access-platform-engineering/)
-9. [Azure Policy as Code with Terraform](/posts/azure-policy-as-code-terraform/)
-10. [Enterprise Platform Operating Model for Cloud Governance Teams](/posts/enterprise-platform-operating-model-cloud-governance/)
+{% assign has_azure_cluster_posts = false %}
+{% for post in site.posts %}
+  {% if post.tags contains 'landing-zone' or post.tags contains 'cloud-governance' or post.tags contains 'platform-engineering' or post.categories contains 'Azure' %}
+    {% assign has_azure_cluster_posts = true %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%d %b %Y" }}
+  {% endif %}
+{% endfor %}
+
+{% unless has_azure_cluster_posts %}
+No Azure landing zone articles are currently published.
+{% endunless %}
+
+## Scheduled reading path
+
+The planned content cluster is:
+
+1. Practical Azure Landing Zone Design for Secure Enterprise Platforms
+2. Azure Management Group and Subscription Design for Secure Enterprise Platforms
+3. Azure Policy Guardrails for Enterprise Landing Zones
+4. Terraform and Azure DevOps Delivery Model for Landing Zones
+5. Azure Hub-and-Spoke Networking for Enterprise Landing Zones
+6. Azure Logging and Monitoring Baseline for Landing Zones
+7. FinOps Tagging and Cost Accountability for Azure Platforms
+8. Azure Identity and Privileged Access Design for Platform Engineering
+9. Azure Policy as Code with Terraform
+10. Enterprise Platform Operating Model for Cloud Governance Teams
 
 ## What the cluster covers
 
@@ -44,4 +60,4 @@ They cover:
 
 Use this page as a map. Each article is designed to stand alone, but the cluster works best when read as a sequence from architecture through operations.
 
-For implementation work, start with the landing zone design article and then jump to the topic that matches the current design decision.
+For implementation work, start with the landing zone design article and then jump to the topic that matches the current design decision as each article becomes available.
