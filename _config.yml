@@ -70,14 +70,14 @@ comments:
     issue_term:
   giscus:
     repo:
-      repo_id:
-      category:
-      category_id:
-      mapping:
-      strict:
-      input_position:
-      lang:
-      reactions_enabled:
+    repo_id:
+    category:
+    category_id:
+    mapping:
+    strict:
+    input_position:
+    lang:
+    reactions_enabled:
 
 assets:
   self_host:
