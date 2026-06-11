@@ -6,7 +6,7 @@ order: 4
 
 Chilepluto is a personal technical-notes site focused on practical engineering, automation, cloud governance, and local AI workflows.
 
-The site is written by Sean Wauchop and collects repeatable notes, examples, and troubleshooting patterns from hands-on infrastructure and platform engineering work. The goal is to publish clear technical references that are useful when building, operating, securing, or debugging real systems.
+The site is written by Sean and collects repeatable notes, examples, and troubleshooting patterns from hands-on infrastructure and platform engineering work. The goal is to publish clear technical references that are useful when building, operating, securing, or debugging real systems.
 
 ## Focus areas
 
