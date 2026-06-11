@@ -1,7 +1,7 @@
 ---
 title: Start Here
 icon: fas fa-compass
-order: 1
+order: 0
 ---
 
 # Start here
