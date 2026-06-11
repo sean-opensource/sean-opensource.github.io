@@ -11,9 +11,11 @@ on:
 
   workflow_dispatch:
 
-  # Rebuild on Sunday and Thursday UTC so future-dated posts publish on
-  # Monday and Friday at 9:00 AM Melbourne time. GitHub cron is UTC.
-  # 23:00 UTC covers AEST. 22:00 UTC covers AEDT during daylight saving.
+  # Scheduled rebuilds allow future-dated posts to become visible.
+  # GitHub cron runs in UTC, so two UTC times are used to cover Melbourne
+  # standard time and daylight saving time. The first step below gates the
+  # scheduled run so deployment only proceeds when Melbourne local time is
+  # Monday or Friday at 9:00 AM.
   schedule:
     - cron: "0 23 * * 0,4"
     - cron: "0 22 * * 0,4"
@@ -36,6 +38,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check Melbourne publish window
+        if: github.event_name == 'schedule'
+        run: |
+          day="$(TZ=Australia/Melbourne date +%u)"
+          hour="$(TZ=Australia/Melbourne date +%H)"
+
+          if { [ "$day" = "1" ] || [ "$day" = "5" ]; } && [ "$hour" = "09" ]; then
+            echo "Scheduled publish window confirmed: Australia/Melbourne Monday/Friday 09:00."
+          else
+            echo "Not the Melbourne Monday/Friday 09:00 publish window. Skipping scheduled deployment."
+            exit 78
+          fi
+
       - name: Checkout
         uses: actions/checkout@v6
         with:
