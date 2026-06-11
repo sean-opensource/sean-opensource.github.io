@@ -45,7 +45,8 @@ analytics:
     id:
     domain:
   cloudflare:
-    id:
+    # Replace this placeholder with the Cloudflare Web Analytics token for chilepluto.com.
+    id: CLOUDFLARE_WEB_ANALYTICS_TOKEN
   fathom:
     id:
 
