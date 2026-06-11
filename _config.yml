@@ -56,7 +56,7 @@ theme_mode:
 
 cdn:
 avatar:
-social_preview_image:
+social_preview_image: /assets/img/chilepluto-social-preview.svg
 
 toc: true
 
@@ -91,8 +91,6 @@ pwa:
 
 paginate: 10
 baseurl: ""
-
-# ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
   footnote_backlink: "&#8617;&#xfe0e;"
