@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">FinOps feedback loop</title>
+  <desc id="desc">A FinOps feedback loop moving from tagging and allocation through budgets, reporting, review, engineering action, and optimisation.</desc>
+  <rect width="1200" height="720" fill="#0f172a"/>
+  <text x="600" y="70" text-anchor="middle" font-family="Segoe UI, Arial" font-size="34" font-weight="700" fill="#f8fafc">FinOps feedback loop</text>
+  <g font-family="Segoe UI, Arial" fill="#f8fafc" stroke="#38bdf8" stroke-width="3">
+    <circle cx="600" cy="360" r="215" fill="none" stroke="#38bdf8" stroke-width="5" stroke-dasharray="12 10"/>
+    <rect x="485" y="125" width="230" height="72" rx="14" fill="#1e293b"/>
+    <text x="600" y="154" text-anchor="middle" font-size="20">Tag and allocate</text>
+    <text x="600" y="180" text-anchor="middle" font-size="16">owner, environment, cost</text>
+    <rect x="795" y="260" width="230" height="72" rx="14" fill="#1e293b"/>
+    <text x="910" y="289" text-anchor="middle" font-size="20">Budget and forecast</text>
+    <text x="910" y="315" text-anchor="middle" font-size="16">actual and trend alerts</text>
+    <rect x="735" y="505" width="230" height="72" rx="14" fill="#1e293b"/>
+    <text x="850" y="534" text-anchor="middle" font-size="20">Review</text>
+    <text x="850" y="560" text-anchor="middle" font-size="16">anomaly and service cost</text>
+    <rect x="235" y="505" width="250" height="72" rx="14" fill="#1e293b"/>
+    <text x="360" y="534" text-anchor="middle" font-size="20">Engineering action</text>
+    <text x="360" y="560" text-anchor="middle" font-size="16">resize, delete, schedule</text>
+    <rect x="175" y="260" width="230" height="72" rx="14" fill="#1e293b"/>
+    <text x="290" y="289" text-anchor="middle" font-size="20">Report</text>
+    <text x="290" y="315" text-anchor="middle" font-size="16">team and platform views</text>
+    <circle cx="600" cy="360" r="85" fill="#0f766e" stroke="#5eead4"/>
+    <text x="600" y="350" text-anchor="middle" font-size="22" font-weight="700">Cost</text>
+    <text x="600" y="379" text-anchor="middle" font-size="22" font-weight="700">accountability</text>
+  </g>
+</svg>
