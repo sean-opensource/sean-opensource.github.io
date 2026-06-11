@@ -11,9 +11,12 @@ on:
 
   workflow_dispatch:
 
-  # Rebuild weekly so future-dated posts become visible on their release date.
+  # Rebuild on Sunday and Thursday UTC so future-dated posts publish on
+  # Monday and Friday at 9:00 AM Melbourne time. GitHub cron is UTC.
+  # 23:00 UTC covers AEST. 22:00 UTC covers AEDT during daylight saving.
   schedule:
-    - cron: "10 23 * * 0"
+    - cron: "0 23 * * 0,4"
+    - cron: "0 22 * * 0,4"
 
 permissions:
   contents: read
