@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Azure Policy as Code workflow</title>
+  <desc id="desc">A policy as code workflow from authoring through pull request, validation, deployment, compliance reporting, and remediation.</desc>
+  <rect width="1200" height="720" fill="#0f172a"/>
+  <text x="600" y="70" text-anchor="middle" font-family="Segoe UI, Arial" font-size="34" font-weight="700" fill="#f8fafc">Policy as Code workflow</text>
+  <g font-family="Segoe UI, Arial" font-size="19" fill="#f8fafc" stroke="#38bdf8" stroke-width="3">
+    <rect x="70" y="220" width="170" height="90" rx="14" fill="#1e293b"/>
+    <text x="155" y="258" text-anchor="middle">Author</text>
+    <text x="155" y="286" text-anchor="middle" font-size="16">definition</text>
+    <rect x="285" y="220" width="170" height="90" rx="14" fill="#1e293b"/>
+    <text x="370" y="258" text-anchor="middle">Pull request</text>
+    <text x="370" y="286" text-anchor="middle" font-size="16">review</text>
+    <rect x="500" y="220" width="170" height="90" rx="14" fill="#1e293b"/>
+    <text x="585" y="258" text-anchor="middle">Validate</text>
+    <text x="585" y="286" text-anchor="middle" font-size="16">plan and tests</text>
+    <rect x="715" y="220" width="170" height="90" rx="14" fill="#1e293b"/>
+    <text x="800" y="258" text-anchor="middle">Assign</text>
+    <text x="800" y="286" text-anchor="middle" font-size="16">audit first</text>
+    <rect x="930" y="220" width="190" height="90" rx="14" fill="#1e293b"/>
+    <text x="1025" y="258" text-anchor="middle">Report</text>
+    <text x="1025" y="286" text-anchor="middle" font-size="16">compliance</text>
+    <line x1="240" y1="265" x2="285" y2="265"/>
+    <line x1="455" y1="265" x2="500" y2="265"/>
+    <line x1="670" y1="265" x2="715" y2="265"/>
+    <line x1="885" y1="265" x2="930" y2="265"/>
+    <rect x="365" y="430" width="220" height="90" rx="14" fill="#334155"/>
+    <text x="475" y="468" text-anchor="middle">Exemptions</text>
+    <text x="475" y="496" text-anchor="middle" font-size="16">owner and expiry</text>
+    <rect x="635" y="430" width="220" height="90" rx="14" fill="#334155"/>
+    <text x="745" y="468" text-anchor="middle">Remediation</text>
+    <text x="745" y="496" text-anchor="middle" font-size="16">managed identity</text>
+    <line x1="800" y1="310" x2="745" y2="430"/>
+    <line x1="1025" y1="310" x2="745" y2="430"/>
+    <line x1="1025" y1="310" x2="475" y2="430"/>
+  </g>
+</svg>
