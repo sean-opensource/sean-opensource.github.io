@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Terraform landing zone delivery pipeline</title>
+  <desc id="desc">A Terraform delivery pipeline with format, validate, static analysis, plan, approval, apply, and post-deployment checks.</desc>
+  <rect width="1200" height="720" fill="#0f172a"/>
+  <text x="600" y="70" text-anchor="middle" font-family="Segoe UI, Arial" font-size="34" font-weight="700" fill="#f8fafc">Terraform delivery pipeline</text>
+  <g font-family="Segoe UI, Arial" fill="#f8fafc" stroke="#38bdf8" stroke-width="3">
+    <rect x="70" y="250" width="130" height="80" rx="14" fill="#1e293b"/>
+    <text x="135" y="298" text-anchor="middle" font-size="20">fmt</text>
+    <rect x="235" y="250" width="130" height="80" rx="14" fill="#1e293b"/>
+    <text x="300" y="298" text-anchor="middle" font-size="20">validate</text>
+    <rect x="400" y="250" width="150" height="80" rx="14" fill="#1e293b"/>
+    <text x="475" y="285" text-anchor="middle" font-size="20">static</text>
+    <text x="475" y="311" text-anchor="middle" font-size="20">analysis</text>
+    <rect x="585" y="250" width="130" height="80" rx="14" fill="#1e293b"/>
+    <text x="650" y="298" text-anchor="middle" font-size="20">plan</text>
+    <rect x="750" y="250" width="140" height="80" rx="14" fill="#334155"/>
+    <text x="820" y="298" text-anchor="middle" font-size="20">approval</text>
+    <rect x="925" y="250" width="130" height="80" rx="14" fill="#1e293b"/>
+    <text x="990" y="298" text-anchor="middle" font-size="20">apply</text>
+    <line x1="200" y1="290" x2="235" y2="290"/>
+    <line x1="365" y1="290" x2="400" y2="290"/>
+    <line x1="550" y1="290" x2="585" y2="290"/>
+    <line x1="715" y1="290" x2="750" y2="290"/>
+    <line x1="890" y1="290" x2="925" y2="290"/>
+    <rect x="380" y="455" width="200" height="80" rx="14" fill="#0f766e" stroke="#5eead4"/>
+    <text x="480" y="489" text-anchor="middle" font-size="20">plan artifact</text>
+    <text x="480" y="516" text-anchor="middle" font-size="16">review evidence</text>
+    <rect x="640" y="455" width="220" height="80" rx="14" fill="#0f766e" stroke="#5eead4"/>
+    <text x="750" y="489" text-anchor="middle" font-size="20">post-checks</text>
+    <text x="750" y="516" text-anchor="middle" font-size="16">drift and health</text>
+    <line x1="650" y1="330" x2="480" y2="455" stroke="#5eead4"/>
+    <line x1="990" y1="330" x2="750" y2="455" stroke="#5eead4"/>
+  </g>
+</svg>
