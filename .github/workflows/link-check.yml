@@ -1,0 +1,40 @@
+name: "Weekly External Link Check"
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekly external link check. GitHub cron is UTC.
+    - cron: "30 22 * * 6"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "link-check"
+  cancel-in-progress: true
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll b -d _site
+        env:
+          JEKYLL_ENV: "production"
+
+      - name: Check internal and external links
+        run: |
+          bundle exec htmlproofer _site \
+            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
