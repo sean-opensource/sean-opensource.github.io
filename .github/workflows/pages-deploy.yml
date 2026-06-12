@@ -16,6 +16,9 @@ on:
   # standard time and daylight saving time. The first job below gates the
   # scheduled run so deployment only proceeds when Melbourne local time is
   # Monday or Friday at 9:00 AM.
+  # Current editorial rhythm:
+  # - Monday: existing technical queue and platform/automation notes.
+  # - Friday: cloud governance, platform engineering, and Deep Learning hub articles.
   schedule:
     - cron: "0 23 * * 0,4"
     - cron: "0 22 * * 0,4"
