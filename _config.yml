@@ -56,7 +56,7 @@ pageviews:
 theme_mode:
 
 cdn:
-avatar:
+avatar: /assets/img/chilepluto-logo.svg
 social_preview_image: /assets/img/chilepluto-social-preview.svg
 
 toc: true
