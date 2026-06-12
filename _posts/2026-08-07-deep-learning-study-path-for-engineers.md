@@ -3,146 +3,272 @@ layout: post
 title: Deep Learning Study Path for Engineers
 date: 2026-08-07 09:00 +1000
 categories: [Deep Learning]
-tags: [deep-learning, machine-learning, neural-networks, ai, study-notes]
-description: A practical study path for engineers learning deep learning concepts, architectures, optimisation, and foundational papers.
+tags: [deep-learning, machine-learning, neural-networks, study-path, python, local-ai]
+description: A practical study path for engineers learning deep learning, based on the structure of Deep Learning by Goodfellow, Bengio, and Courville.
 ---
 
-This article starts the [Deep Learning](/deep-learning/) content hub.
+This article starts the Chilepluto Deep Learning cluster. It is based on the structure of *Deep Learning* by Ian Goodfellow, Yoshua Bengio, and Aaron Courville, and turns the book's academic sequence into an engineering-focused reading path.
 
-Deep learning is easiest to learn when the concepts are arranged as a sequence. Start with the learning loop, then build toward optimisation, regularisation, architectures, representation learning, and evaluation.
+The goal is not to replace the book. The goal is to create practical notes that help engineers understand the major concepts, connect them to implementation work, and decide what to study next.
 
-The goal of this hub is to create practical engineering notes. These posts explain concepts in original language and focus on how engineers can reason about models, experiments, and failure modes.
+## Why this study path exists
 
-## Recommended learning sequence
+Deep learning is easy to approach through tools and examples, but difficult to understand deeply without the foundations.
 
-A practical path is:
+You can train a model with a few lines of Python. That does not mean you understand why the model trains, why it fails, why it overfits, why optimisation becomes unstable, or why one architecture is more suitable than another.
 
-1. Machine learning foundations
-2. Numerical computation
-3. Probability and statistics
-4. Feedforward neural networks
-5. Optimisation
-6. Regularisation
-7. Convolutional networks
-8. Sequence models
-9. Representation learning
-10. Evaluation and experiment design
+The book's structure is useful because it separates deep learning into three broad layers:
 
-This order matters. Advanced model families are easier to understand once the training loop and evaluation process are clear.
+1. Applied mathematics and machine learning basics
+2. Modern deep network practice
+3. Research-oriented models and inference methods
 
-## Machine learning foundations
+For engineers, that becomes a practical learning path:
 
-A supervised learning system usually has:
+1. Learn the mathematical language.
+2. Understand the machine learning problem.
+3. Build intuition for neural networks.
+4. Learn why training is hard.
+5. Study architectures by data type and task.
+6. Learn practical methodology.
+7. Move into advanced generative and probabilistic models when needed.
 
-- Input data
-- A model
-- A prediction
-- A loss function
-- An optimisation process
-- An evaluation process
+## Stage 1: Mathematical foundations
 
-Deep learning extends this pattern by learning layered representations from data. The model is not just fitting a simple mapping; it is also learning intermediate features that may be useful for prediction.
+Start with the mathematical ideas that appear repeatedly:
 
-## Numerical computation
+- Scalars, vectors, matrices, and tensors
+- Matrix multiplication
+- Norms
+- Eigendecomposition
+- Singular value decomposition
+- Probability distributions
+- Conditional probability
+- Bayes' rule
+- Expectation, variance, and covariance
+- Entropy and information theory
+- Gradient-based optimisation
 
-Deep learning systems are numerical systems. Engineers need to understand tensors, matrix multiplication, gradients, floating-point precision, and shape transformations.
+You do not need to become a pure mathematician. You need enough fluency to read equations and translate them into implementation decisions.
 
-Many practical bugs are not theoretical mistakes. They are shape mismatches, unstable gradients, incorrect scaling, or data pipeline errors.
+For example, tensor shape errors in code are usually linear algebra misunderstandings in disguise. Training instability is often optimisation or numerical computation showing up in practice.
 
-## Probability and generalisation
+## Stage 2: Machine learning basics
 
-A model that performs well on training data but fails on new data has not learned a useful general pattern.
+Before deep learning, understand machine learning fundamentals:
 
-Important concepts include:
-
-- Train, validation, and test splits
-- Overfitting
+- Learning algorithms
+- Training data and test data
+- Capacity
+- Overfitting and underfitting
+- Hyperparameters
+- Validation sets
 - Bias and variance
-- Cross-entropy
-- Calibration
-- Sampling
-- Uncertainty
+- Maximum likelihood estimation
+- Supervised and unsupervised learning
+- Stochastic gradient descent
 
-Evaluation discipline is as important as model design.
+This stage matters because deep learning does not remove the core machine learning problems. It amplifies them.
 
-## Neural network foundations
+Large models still overfit. Validation still matters. Data distribution still matters. Hyperparameters still matter.
 
-A feedforward neural network stacks layers that transform inputs into outputs. Each layer applies a learned transformation, often followed by a non-linear activation.
+## Stage 3: Feedforward networks
 
-Important ideas:
+Feedforward neural networks are the foundation for many later architectures.
 
-- Hidden layers
+Focus on:
+
+- Input, hidden, and output layers
 - Activation functions
 - Loss functions
+- Gradient-based learning
 - Backpropagation
-- Gradient-based training
-- Representation learning
+- Architecture design
+- Hidden unit behaviour
 
-The core question is not just whether the model can fit the training data. The real question is whether it learns features that transfer to unseen examples.
+The key mental model: a feedforward network composes many simpler transformations into one larger function.
 
-## Optimisation and regularisation
+Each layer changes the representation. The model learns intermediate representations that help solve the final task.
 
-Training depends heavily on optimisation choices.
+## Stage 4: Regularisation
 
-Important optimisation concepts:
+Regularisation is about improving generalisation.
 
-- Learning rate
-- Mini-batches
-- Momentum
-- Adaptive optimisers
-- Gradient behaviour
+Study:
 
-Important regularisation concepts:
-
-- Weight decay
-- Dropout
+- Parameter norm penalties
+- Dataset augmentation
+- Noise robustness
 - Early stopping
-- Data augmentation
-- Batch normalisation
+- Parameter sharing
+- Sparse representations
+- Ensembles
+- Dropout
+- Adversarial training
 
-Optimisation helps the model learn. Regularisation helps the model generalise.
+Engineers often discover regularisation only after a model performs well on training data and poorly on validation data.
 
-## Architectures
+Do not treat regularisation as an optional polish step. It is part of model design.
 
-Different architectures encode different assumptions.
+## Stage 5: Optimisation for deep models
 
-Examples:
+Optimisation is where many deep learning projects fail.
 
-- Feedforward networks handle general vector inputs.
-- Convolutional networks handle spatial structure.
-- Recurrent networks handle ordered sequences.
-- Attention-based models handle relationships between elements.
-- Residual networks help train deeper models.
+Study:
 
-Architecture choice should follow the data and the task.
+- Why neural network optimisation differs from pure optimisation
+- Ill-conditioning
+- Local minima and saddle points
+- Gradient clipping
+- Learning rates
+- Momentum
+- Adaptive methods
+- Parameter initialisation
+- Batch size effects
 
-## Evaluation checklist
+A model that is architecturally capable can still fail because optimisation is unstable or poorly configured.
 
-For each experiment, ask:
+## Stage 6: Architecture families
 
-- What is the task?
-- What is the input shape?
-- What is the output shape?
-- What loss function is being optimised?
-- What metric will decide success?
-- What baseline is being compared?
-- Is there evidence of overfitting?
-- Can the result be reproduced?
-- What are the failure cases?
+After the foundations, study architectures by the structure of the data.
 
-## Hub reading path
+### Images and spatial data
 
-Use this order for the initial Deep Learning cluster:
+Use convolutional networks when the data has spatial structure.
+
+Focus on:
+
+- Convolution
+- Pooling
+- Local connectivity
+- Parameter sharing
+- Translation behaviour
+- Computer vision tasks
+
+### Sequences and time-dependent data
+
+Use recurrent or sequence models when order matters.
+
+Focus on:
+
+- Recurrent neural networks
+- Bidirectional models
+- Encoder-decoder models
+- Long-term dependencies
+- Gated recurrent units
+- LSTMs
+- Attention and modern transformer-style thinking as a later extension
+
+### Representation learning
+
+Representation learning becomes important when the learned internal features are as valuable as the final prediction.
+
+Focus on:
+
+- Autoencoders
+- Distributed representations
+- Transfer learning
+- Domain adaptation
+- Disentangling factors of variation
+
+## Stage 7: Practical methodology
+
+The practical methodology chapter is one of the most engineering-relevant parts of the path.
+
+Study:
+
+- Performance metrics
+- Baseline models
+- Whether more data is needed
+- Hyperparameter selection
+- Debugging strategies
+- Error analysis
+
+A strong engineer does not just train models. They diagnose them.
+
+Good questions include:
+
+- Is the model underfitting or overfitting?
+- Is the metric aligned with the actual goal?
+- Is the validation set representative?
+- Is the training pipeline leaking data?
+- Is the model better than a simple baseline?
+- Is the failure caused by data, optimisation, architecture, or evaluation?
+
+## Stage 8: Advanced models
+
+Only move into advanced topics after the foundations are solid.
+
+Advanced areas include:
+
+- Linear factor models
+- Autoencoders
+- Structured probabilistic models
+- Monte Carlo methods
+- Approximate inference
+- Generative models
+- Boltzmann machines
+- Directed generative networks
+
+These topics are valuable, but they are not the best starting point for most engineers.
+
+## How to study efficiently
+
+Use this pattern:
+
+1. Read the concept.
+2. Write a short explanation in your own words.
+3. Implement a toy example.
+4. Break it deliberately.
+5. Plot the behaviour.
+6. Compare against a simple baseline.
+7. Record what changed and why.
+
+Deep learning is learned through cycles of theory, implementation, failure, and debugging.
+
+## Practical project ladder
+
+Use this project sequence:
+
+1. Linear regression from scratch
+2. Logistic regression from scratch
+3. A small multilayer perceptron
+4. A classifier with train/validation/test split
+5. A regularised model with dropout or weight decay
+6. A convolutional model for images
+7. A sequence model for text or time series
+8. An autoencoder
+9. A transfer learning experiment
+10. A local inference workflow
+
+Each project should teach one concept rather than trying to use every technique at once.
+
+## Suggested Chilepluto reading sequence
+
+This Deep Learning cluster will expand in this order:
 
 1. Deep Learning Study Path for Engineers
-2. Foundations of Deep Learning
-3. Core Neural Network Architectures
-4. Optimisation and Regularisation
-5. Representation Learning and Sequence Models
-6. Deep Learning Reading List
+2. Foundations of Deep Learning: Representations, Optimisation, and Generalisation
+3. Core Neural Network Architectures: MLPs, CNNs, RNNs, and Residual Networks
+4. Training Deep Networks: Optimisation, Regularisation, and Evaluation
+5. Embeddings and Sequence Models in Deep Learning
 
-## Final thought
+Later articles should cover:
 
-Deep learning is best learned by combining theory with small experiments. Read enough to understand the concept, build enough to encounter the failure modes, and measure enough to know whether the model is actually improving.
+- Linear algebra for neural networks
+- Probability for machine learning
+- Backpropagation from first principles
+- Convolutional networks for engineers
+- Autoencoders and representation learning
+- Practical model debugging
+- Hyperparameter tuning
+- Generative models
+- Local model deployment
 
-> Last reviewed: June 2026. Deep learning frameworks and model architectures change quickly; validate tooling and implementation details against current documentation before production use.
+## Final recommendation
+
+Start with the foundations. Do not rush to advanced architectures before you can explain the training loop, the loss function, the validation process, and why the model is generalising or failing.
+
+Deep learning is not just a collection of architectures. It is a way of learning representations from data, optimising large parameterised functions, and validating whether those functions behave usefully outside the training set.
+
+> Last reviewed: June 2026. This article is a study guide based on the structure of *Deep Learning* by Goodfellow, Bengio, and Courville. Validate tool-specific implementation details against current framework documentation before use.
