@@ -28,15 +28,14 @@ Deep learning notes are scheduled and will appear here as they publish.
 
 The initial Deep Learning cluster is scheduled as:
 
-1. Deep Learning Study Path for Engineers
-2. Foundations of Deep Learning: Representations, Optimisation, and Generalisation
-3. Core Neural Network Architectures: MLPs, CNNs, RNNs, and Residual Networks
-4. Optimisation and Regularisation for Deep Networks
-5. Representation Learning, Embeddings, and Sequence Models
-6. Deep Learning Reading List: Papers to Study After the Fundamentals
+1. Deep Learning Study Path for Engineers — 7 Aug 2026
+2. Foundations of Deep Learning: Representations, Optimisation, and Generalisation — 14 Aug 2026
+3. Core Neural Network Architectures: MLPs, CNNs, RNNs, and Residual Networks — 21 Aug 2026
+4. Training Deep Networks: Optimisation, Regularisation, and Evaluation — 28 Aug 2026
+5. Embeddings and Sequence Models in Deep Learning — 4 Sep 2026
 
 ## How to use this hub
 
-Start with the study path article, then move through the concept notes. Use the papers article as a follow-up reading map once the core concepts are familiar.
+Start with the study path article, then move through the concept notes as they publish.
 
 The posts are written as engineering notes, not academic lecture notes. They focus on mental models, implementation consequences, practical checks, and how to connect theory to real projects.
