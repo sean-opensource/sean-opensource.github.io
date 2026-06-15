@@ -78,8 +78,7 @@ memory available for macOS and the Python process.
 
 ## Next Steps
 
-Continue with [Choose a Local Language Model for Your Hardware](/posts/choose-local-language-model-hardware/)
-before downloading a larger model.
+Continue with the upcoming hardware guide before downloading a larger model.
 
 ## References
 
