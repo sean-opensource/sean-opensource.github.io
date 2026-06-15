@@ -37,4 +37,4 @@ jobs:
       - name: Check internal and external links
         run: |
           bundle exec htmlproofer _site \
-            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/,/^https:\/\/fonts\.googleapis\.com/,/^https:\/\/fonts\.gstatic\.com/"

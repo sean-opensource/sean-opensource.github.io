@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Training Deep Networks: Optimisation, Regularisation, and Evaluation
+title: "Training Deep Networks: Optimisation, Regularisation, and Evaluation"
 date: 2026-08-28 09:00 +1000
 categories: [Deep Learning]
 tags: [deep-learning, optimisation, regularisation, neural-networks, evaluation]

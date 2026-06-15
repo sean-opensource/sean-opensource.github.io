@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Core Neural Network Architectures: MLPs, CNNs, RNNs, and Residual Networks
+title: "Core Neural Network Architectures: MLPs, CNNs, RNNs, and Residual Networks"
 date: 2026-08-21 09:00 +1000
 categories: [Deep Learning]
 tags: [deep-learning, neural-networks, cnn, rnn, residual-networks, architectures]

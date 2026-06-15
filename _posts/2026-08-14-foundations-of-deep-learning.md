@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Foundations of Deep Learning: Representations, Optimisation, and Generalisation
+title: "Foundations of Deep Learning: Representations, Optimisation, and Generalisation"
 date: 2026-08-14 09:00 +1000
 categories: [Deep Learning]
 tags: [deep-learning, machine-learning, representations, optimisation, generalisation]
