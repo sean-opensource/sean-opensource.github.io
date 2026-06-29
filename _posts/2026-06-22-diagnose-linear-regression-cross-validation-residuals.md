@@ -93,8 +93,8 @@ helps reveal whether results change substantially with the training rows.
 
 ## Next Steps
 
-Use [Build a Reusable scikit-learn Pipeline](/posts/build-reusable-scikit-learn-pipeline/)
-to keep preprocessing and evaluation together.
+A later article will cover building a reusable scikit-learn pipeline to keep
+preprocessing and evaluation together.
 
 ## References
 
